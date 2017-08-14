@@ -36,3 +36,9 @@ storeFive = {
 };
 
 var shop = ['First and Pike', 'Seatac Airport', 'Seattle Center', 'Cap Hill', 'Alki']
+var body = document.getElementsByTagName('body')[0];
+
+for (var i = 0; i < shop.lenght; i++)
+for
+
+var customerPerHour = Math.floor(Math.random() * (shop[i].maxCust - shop[i].minCust[i]) + shop[i].minCust);
