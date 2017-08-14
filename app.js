@@ -35,10 +35,15 @@ storeFive = {
   avgSale:'4.6'
 };
 
-var shop = ['First and Pike', 'Seatac Airport', 'Seattle Center', 'Cap Hill', 'Alki']
+var shop = [storeOne, storeTwo, storeThree, storeFour, storeFive];
 var body = document.getElementsByTagName('body')[0];
 
-for (var i = 0; i < shop.lenght; i++)
-for
-
+for (var i = 0; i < shop.lenght; i++);
+var ulTag = document.createElement('ul') * shop[i];
+body.apendchild(ulTag);
+var liTag = document.createElement('li') * shop[i];
+ul.apendchild(liTag);
 var customerPerHour = Math.floor(Math.random() * (shop[i].maxCust - shop[i].minCust[i]) + shop[i].minCust);
+console.log(customerPerHour);
+var cookiesPerHour = customersPerHour * shop[i].avgSale;
+console.log(cookiesPerHour);
