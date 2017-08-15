@@ -35,6 +35,11 @@ var storeFive = {
   avgSale:'4.6'
 };
 
+var salesPerHour = [];
+console.log(salesPerHour);
+var totalSalesPerHour = [];
+var totalSales = [];
+
 var body = document.getElementsByTagName('body')[0];
 var newtable = document.createElement('table');
 var shop = [storeOne, storeTwo, storeThree, storeFour, storeFive];
@@ -43,7 +48,7 @@ body.appendChild(newtable);
 
 for (var t = -1; t < 15; t++){
   if (t === -1){
-    var time = 'Store Name';
+    var time = 'Location';
   } else if (t < 6){
     var time = (t + 6) + 'am';
   } else if (t === 6){
@@ -56,21 +61,24 @@ for (var t = -1; t < 15; t++){
   timeHeading.innerText = time;
   newtable.appendChild(timeHeading);
 }
-
-for (var i = 0; i < shop.lenght; i++);{
+console.log(shop);
+for (var i = 0; i < shop.length; i++){
   var newRow = document.createElement('tr');
   newRow.innerText = shop[i].name;
   newtable.appendChild(newRow);
-  for (var t = 0; t < 15; t++){
-    if (t < 14){
+  for (var y = 0; y < 15; y++){
+    if (y < 14){
       var customerPerHour = Math.floor(Math.random() * (shop[i].maxCust - shop[i].minCust[i]) + shop[i].minCust);
       var cookiesPerHour = Math.floor(customerPerHour * shop[i].avgSale);
-      console.log(cookiesPerHour);
+      salesPerHour.push(cookiesPerHour);
       var newdata = document.createElement('td');
       newdata.innerText = cookiesPerHour;
-      newdata.appendChild(newRow);
-    } else {
-      var time = 0;
+      newRow.appendChild(newdata);
     }
   }
+    // else {
+    //   var newdata = document.createElement('td');
+    //   newdata.innerText = totalSales;
+    //   newdata.appendChild(newRow);
+    // }
 }
