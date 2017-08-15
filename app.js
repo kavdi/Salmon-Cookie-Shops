@@ -1,39 +1,15 @@
 'use strict';
-
-var storeOne = {
-  name:'First and Pike',
-  minCust:'23',
-  maxCust:'65',
-  avgSale:'6.3'
-};
-
-var storeTwo = {
-  name:'Seatac Airport',
-  minCust:'3',
-  maxCust:'24',
-  avgSale:'1.2'
-};
-
-var storeThree = {
-  name:'Seattle Center',
-  minCust:'11',
-  maxCust:'38',
-  avgSale:'3.7'
-};
-
-var storeFour = {
-  name:'Cap Hill',
-  minCust:'20',
-  maxCust:'38',
-  avgSale:'2.3'
-};
-
-var storeFive = {
-  name:'Alki',
-  minCust:'2',
-  maxCust:'16',
-  avgSale:'4.6'
-};
+function store(name, minCust, maxCust, avgSale){
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgSale = avgSale;
+}
+var storeOne = new store('First and Pike', 23, 65, 6.3);
+var storeTwo = new store('Seatac Airport', 3, 24, 1.2);
+var storeThree = new store('Seattle Center', 11, 38, 3.7);
+var storeFour = new store('Cap Hill', 20, 38, 2.3);
+var storeFive = new store('Alki', 2, 16, 4.6);
 
 var salesPerHour = [];
 console.log(salesPerHour);
@@ -66,19 +42,4 @@ for (var i = 0; i < shop.length; i++){
   var newRow = document.createElement('tr');
   newRow.innerText = shop[i].name;
   newtable.appendChild(newRow);
-  for (var y = 0; y < 15; y++){
-    if (y < 14){
-      var customerPerHour = Math.floor(Math.random() * (shop[i].maxCust - shop[i].minCust[i]) + shop[i].minCust);
-      var cookiesPerHour = Math.floor(customerPerHour * shop[i].avgSale);
-      salesPerHour.push(cookiesPerHour);
-      var newdata = document.createElement('td');
-      newdata.innerText = cookiesPerHour;
-      newRow.appendChild(newdata);
-    }
-  }
-    // else {
-    //   var newdata = document.createElement('td');
-    //   newdata.innerText = totalSales;
-    //   newdata.appendChild(newRow);
-    // }
 }
