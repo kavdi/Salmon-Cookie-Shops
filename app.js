@@ -49,7 +49,7 @@ for (var t = -1; t < 15; t++){
   } else if (t === 6){
     var time = '12pm';
   } else if (t === 14){
-    var time = 'Total Sales'
+    var time = 'Total Sales';
   } else {
     var time = (t - 6) + 'pm';}
   var timeHeading = document.createElement('th');
@@ -66,7 +66,12 @@ for (var i = 0; i < shop.lenght; i++);{
       var customerPerHour = Math.floor(Math.random() * (shop[i].maxCust - shop[i].minCust[i]) + shop[i].minCust);
       console.log(customerPerHour);
       var cookiesPerHour = Math.floor(customerPerHour * shop[i].avgSale);
+      console.log(cookiesPerHour);
+      var newdata = document.createElement('td');
+      newdata.innerText = cookiesPerHour;
+      newdata.appendChild(newRow);
+    } else {
+      var time = 0;
     }
-
-
-  console.log(cookiesPerHour);
+  }
+}
