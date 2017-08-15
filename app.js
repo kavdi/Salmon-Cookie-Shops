@@ -64,7 +64,6 @@ for (var i = 0; i < shop.lenght; i++);{
   for (var t = 0; t < 15; t++){
     if (t < 14){
       var customerPerHour = Math.floor(Math.random() * (shop[i].maxCust - shop[i].minCust[i]) + shop[i].minCust);
-      console.log(customerPerHour);
       var cookiesPerHour = Math.floor(customerPerHour * shop[i].avgSale);
       console.log(cookiesPerHour);
       var newdata = document.createElement('td');
