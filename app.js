@@ -53,6 +53,7 @@ runIt();
 
 var body = document.getElementsByTagName('body')[0];
 var newtable = document.createElement('table');
+newtable.className = 'table';
 body.appendChild(newtable);
 for (var t = -1; t < 15; t++){
   if (t === -1){
@@ -66,15 +67,18 @@ for (var t = -1; t < 15; t++){
   } else {
     var time = (t - 6) + 'pm';}
   var timeHeading = document.createElement('th');
+  timeHeading.className = 'heading';
   timeHeading.innerText = time;
   newtable.appendChild(timeHeading);
 }
 
 for (var i = 0; i < shops.length; i++){
   var row = document.createElement('tr');
+  row.className = 'row';
   row.innerText = shops[i].name;
   for (var j = 0; j < shops[i].salesPerHour.length; j++){
     var td = document.createElement('td');
+    td.className = 'data';
     td.innerText = shops[i].salesPerHour[j];
     row.appendChild(td);
   }
@@ -83,10 +87,12 @@ for (var i = 0; i < shops.length; i++){
 for (var f = -1; f < (totals.length); f++){
   if (f === -1){
     var footerRow = document.createElement('tr');
+    footerRow.className = 'footer';
     footerRow.innerText = 'Hourly Totals';
   }
   else {
     var allstores = document.createElement('td');
+    allstores.className = 'finaldata';
     allstores.innerText = totals[f];
     footerRow.appendChild(allstores);
   }
