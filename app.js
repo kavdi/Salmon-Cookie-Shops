@@ -2,7 +2,6 @@
 
 var shops = [];
 var totals = [];
-console.log(totals);
 var storeHours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 function Store(name, minCust, maxCust, avgSale){
@@ -41,6 +40,7 @@ for (var k = 0; k < shops.length; k++){
 }
 
 var runIt = function(){
+  totals = [];
   for (var m = 0; m < shops[0].salesPerHour.length; m++){
     var allCookies = 0;
     for (var w = 0; w < shops.length; w++){
@@ -72,29 +72,65 @@ for (var t = -1; t < 15; t++){
   newtable.appendChild(timeHeading);
 }
 
-for (var i = 0; i < shops.length; i++){
+var makeRow = function(){
+  for (var i = 0; i < shops.length; i++){
+    var row = document.createElement('tr');
+    row.className = 'row';
+    row.innerText = shops[i].name;
+    for (var j = 0; j < 15; j++){
+      var td = document.createElement('td');
+      td.className = 'data';
+      td.innerText = shops[i].salesPerHour[j];
+      row.appendChild(td);
+    }
+    newtable.appendChild(row);
+  }
+};
+makeRow();
+
+var makeFooter = function(){
+  for (var f = -1; f < (totals.length); f++){
+    if (f === -1){
+      var footerRow = document.createElement('tr');
+      footerRow.className = 'footer';
+      footerRow.id = 'lastRow';
+      footerRow.innerText = 'Hourly Totals';
+    }
+    else {
+      var allstores = document.createElement('td');
+      allstores.className = 'finaldata';
+      allstores.innerText = totals[f];
+      footerRow.appendChild(allstores);
+    }
+    newtable.appendChild(footerRow);
+  }
+};
+makeFooter();
+
+function newCookieStore(event) {
+  event.preventDefault();
+  var store = new Store;
+  store.name = this.elements['name'].value;
+  store.minCust = parseInt(this.elements['minCust'].value);
+  store.maxCust = parseInt(this.elements['maxCust'].value);
+  store.avgSale = parseFloat(this.elements['avgSale'].value);
+  store.totalPerDay();
+  var deezNutz = document.getElementById('lastRow');
+  console.log(deezNutz);
+  newtable.removeChild(deezNutz);
   var row = document.createElement('tr');
   row.className = 'row';
-  row.innerText = shops[i].name;
-  for (var j = 0; j < shops[i].salesPerHour.length; j++){
+  row.innerText = store.name;
+  for (var j = 0; j < 15; j++){
     var td = document.createElement('td');
     td.className = 'data';
-    td.innerText = shops[i].salesPerHour[j];
+    td.innerText = store.salesPerHour[j];
     row.appendChild(td);
   }
   newtable.appendChild(row);
+  runIt();
+  makeFooter();
 }
-for (var f = -1; f < (totals.length); f++){
-  if (f === -1){
-    var footerRow = document.createElement('tr');
-    footerRow.className = 'footer';
-    footerRow.innerText = 'Hourly Totals';
-  }
-  else {
-    var allstores = document.createElement('td');
-    allstores.className = 'finaldata';
-    allstores.innerText = totals[f];
-    footerRow.appendChild(allstores);
-  }
-  newtable.appendChild(footerRow);
-}
+
+var form = document.getElementsByClassName('newStore')[0];
+form.addEventListener('submit', newCookieStore);

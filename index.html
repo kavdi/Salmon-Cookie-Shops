@@ -9,20 +9,33 @@
   <body>
     <img src="salmon.png" alt="Picture of a Salmon" />
 <form class="newStore" action="index.html" method="post">
-  <table>
-    <tr>
-      <td><label for="title">New Store</label></td>
-      <td><input type="text" name="title" class="field" placeholder="Input new Store Name"/></td>
-    </tr>
-    <tr>
-      <td><label for="minCust">Min Customer</label></td>
-      <td><input type="text" name="minCust" class="field" placeholder="Input minCust per hour" </td>
-    </tr>
-    <tr>
-      <td><label for="maxCust">Max Customer</label></td>
-      <td><input type="text" name="maxCust" class="field" placeholder="Input maxCust per hour" </td>
-    </tr>
-  </table>
+  <fieldset>
+    <legend>Input New Store</legend>
+    <table>
+      <tr>
+        <td><label for="name">New Store</label></td>
+        <td><input type="text" name="name" class="field" placeholder="Input new Store Name"/></td>
+      </tr>
+      <tr>
+        <td><label for="minCust">Min Customer</label></td>
+        <td><input type="number" name="minCust" min="0" max="100" class="field" placeholder="Input minCust per hour" </td>
+      </tr>
+      <tr>
+        <td><label for="maxCust">Max Customer</label></td>
+        <td><input type="number" name="maxCust" min="0" max="100" class="field" placeholder="Input maxCust per hour" </td>
+      </tr>
+      <tr>
+        <td><label for="avgSale">Hourly Sales</label></td>
+        <td><input type="number" name="avgSale" step="0.01" class="field" placeholder="Input average sales per hour" </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="text-align: right;">
+          <input type="submit" value="Submit Store" id="submit" />
+        </td>
+      </tr>
+    </table>
+  </fieldset>
 </form>
   </body>
   <script src="app.js" charset="utf-8"></script>
