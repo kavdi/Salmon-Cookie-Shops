@@ -134,3 +134,7 @@ function newCookieStore(event) {
 
 var form = document.getElementsByClassName('newStore')[0];
 form.addEventListener('submit', newCookieStore);
+
+// function formValidation() {
+// var minCust <= var maxCust
+// }
