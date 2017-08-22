@@ -45,3 +45,25 @@ img {
   border: thin solid black;
   background-color: rgb(190, 73, 0)
 }
+
+.store-info {
+  font-family: 'Indie Flower', cursive;
+  float: right;
+  width: 25%;
+  color: orange;
+  font-weight: bold;
+}
+
+.no-tag{
+  list-style: none;
+}
+
+.about {
+  float: right;
+  width: 40%;
+  font-size: 25px;
+}
+
+.hours {
+  color: orange;
+}
