@@ -65,5 +65,8 @@ img {
 }
 
 .hours {
-  color: orange;
+  color: white;
+  background-image: url(img/cutter.jpeg);
+  width: 25%;
+  text-align: center;
 }
