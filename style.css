@@ -6,11 +6,18 @@ background: linear-gradient(to bottom, rgba(30,119,154,1) 2%,rgba(30,119,154,0.3
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e779a', endColorstr='#007ed5e8',GradientType=0 ); /* IE6-9 */
 }
 
-img {
+.bigfish {
     display: block;
     margin: auto;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  color: brown;
+  font-size: 50px;
+
+}
 .table {
   border: thick dashed green;
   width: 50%;
@@ -50,8 +57,10 @@ img {
   font-family: 'Indie Flower', cursive;
   float: right;
   width: 25%;
-  color: orange;
+  color: brown;
   font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 }
 
 .no-tag{
@@ -65,8 +74,22 @@ img {
 }
 
 .hours {
-  color: white;
-  background-image: url(img/cutter.jpeg);
-  width: 25%;
-  text-align: center;
+  color: brown;
+}
+
+.pic {
+  display: block;
+  margin-left: 20px;
+  width: 200px;
+  padding: 10px;
+}
+
+.fampic {
+  width: 250px;
+}
+
+.buy {
+  width: 250px;
+  float: right;
+  padding: 10px;
 }
